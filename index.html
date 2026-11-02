@@ -2,571 +2,466 @@
 <html lang="ko" data-lang="ko">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <title>옥천당 한의약연구소 | OKRI</title>
 <link rel="icon" href="/favicon.ico" sizes="any" />
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180.png" />
 <meta name="description" content="옥천당 한의약연구소(OKRI) — 한의학을 일상에 더 가깝게, 그리고 세계로. 약속처방·한약 표준화, 진료 모델, 의료기기, 디지털·AI, 한의학 세계화를 연구하는 지식 플랫폼이자 싱크탱크." />
-<meta name="theme-color" content="#0f1f3d" />
+<meta name="theme-color" content="#fbfbfd" />
 <meta property="og:type" content="website" />
 <meta property="og:title" content="옥천당 한의약연구소 | OKRI" />
 <meta property="og:description" content="전통과 혁신이 만나는 한의학 연구소 — 과학화 · 표준화 · 사업화" />
 <meta property="og:locale" content="ko_KR" />
 <meta property="og:locale:alternate" content="en_US" />
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+<script>
+/* 첫 그림 전에 언어·스크립트 여부를 정한다 — 영문으로 보던 사람에게 국문이 번쩍 보이지 않게 */
+(function(){var r=document.documentElement;r.classList.add('js');var s;try{s=localStorage.getItem('okri-lang')}catch(e){}
+if(s==='en'){r.setAttribute('data-lang','en');r.setAttribute('lang','en')}})();
+</script>
 <style>
-:root{
-  --bg:#ffffff; --bg-soft:#f6f8fb; --bg-soft-2:#eef2f7; --surface:#ffffff;
-  --border:#e4e9f0; --border-strong:#d2dae5;
-  --ink:#0f1f3d; --ink-2:#33415a; --muted:#647189; --muted-2:#8b97ab;
-  --navy:#0f1f3d; --navy-2:#16304f;
-  --accent:#1457b8; --accent-2:#1f6feb; --accent-ink:#0f4699; --accent-soft:#eaf1fb; --accent-soft-2:#dbe8fa;
-  --leaf:#117a43; --leaf-soft:#e7f3ec;
-  --radius:14px; --radius-sm:10px;
-  --shadow:0 1px 2px rgba(15,31,61,.05), 0 1px 3px rgba(15,31,61,.03);
-  --shadow-md:0 8px 28px rgba(15,31,61,.08), 0 2px 8px rgba(15,31,61,.04);
-  --maxw:1280px;
-  --font:"Pretendard","Pretendard Variable",-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI",Roboto,sans-serif;
+/* 2026-11 리디자인(apple-design 원칙) — 크기별 자간·행간 · 반투명 상단 바 · 누르는 순간 반응 · 끌어 넘기는 카드
+   동작 줄이기·투명도 줄이기·대비 높이기 대응. 국문/영문은 .kr/.en 으로 나란히 두고 data-lang 으로 고른다 */
+:root{--bg:#fbfbfd;--card:#fff;--ink:#14213a;--ink2:#3d4a60;--mute:#6b778c;
+  --line:color-mix(in srgb,var(--ink) 9%,transparent);
+  --accent:#1457b8;--accent-hover:#0f4699;--accent-ink:#1457b8;--green:#117a43;--nav-h:56px}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:calc(var(--nav-h) + 16px)}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font:400 1.0625rem/1.65 -apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Pretendard Variable",Pretendard,"Segoe UI","Noto Sans KR",sans-serif;
+  word-break:keep-all;overflow-wrap:break-word;-webkit-font-smoothing:antialiased}
+img,svg{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+a,button{touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+p,h1,h2,h3,ol,dl{margin:0}
+h1,h2,h3{text-wrap:balance}
+:focus-visible{outline:3px solid color-mix(in srgb,var(--accent) 55%,transparent);outline-offset:3px;border-radius:12px}
+.wrap{width:min(1080px,100% - 40px);margin-inline:auto}
+
+/* 국문 / 영문 */
+.en{display:none}
+html[data-lang="en"] .kr{display:none}
+html[data-lang="en"] .en{display:inline}
+
+.skip{position:absolute;left:16px;top:-60px;z-index:60;padding:10px 16px;border-radius:999px;background:var(--ink);color:#fff;font-size:.9rem;font-weight:600}
+.skip:focus{top:10px}
+
+/* 글자 위계 — 크면 자간을 좁히고 행간을 줄인다 */
+.eyebrow{font-size:.78rem;font-weight:650;letter-spacing:.09em;text-transform:uppercase;color:var(--accent-ink)}
+.display{font-size:clamp(2.45rem,6.4vw,5rem);line-height:1.08;letter-spacing:-.035em;font-weight:720;margin:.35em 0 .3em}
+html[data-lang="en"] .display{letter-spacing:-.03em}
+.h2{font-size:clamp(1.85rem,4.2vw,3rem);line-height:1.14;letter-spacing:-.028em;font-weight:700;margin:.3em 0 .45em}
+.h3{font-size:1.2rem;line-height:1.38;letter-spacing:-.012em;font-weight:680;margin:0 0 .4em}
+.lead{font-size:clamp(1.06rem,1.7vw,1.25rem);line-height:1.62;color:var(--ink2);max-width:40em}
+.small{font-size:.86rem;line-height:1.55;letter-spacing:.01em;color:var(--mute)}
+.sub{display:block;font-size:.8rem;letter-spacing:.02em;color:var(--mute);font-weight:500;margin-top:.15em}
+section{padding:clamp(72px,11vw,140px) 0}
+
+/* 상단 바 — 콘텐츠가 비쳐 흐르는 반투명 재질. 경계는 선 대신 스크롤될 때만 생기는 그림자 */
+.nav{position:fixed;inset:0 0 auto;z-index:20;height:var(--nav-h);display:flex;align-items:center;
+  background:color-mix(in srgb,var(--bg) 72%,transparent);
+  -webkit-backdrop-filter:saturate(180%) blur(20px);backdrop-filter:saturate(180%) blur(20px)}
+.nav::after{content:"";position:absolute;inset:auto 0 -14px;height:14px;pointer-events:none;opacity:0;
+  background:linear-gradient(to bottom,rgba(0,0,0,.06),transparent);transition:opacity .25s}
+.nav.scrolled::after{opacity:1}
+.nav .wrap{display:flex;align-items:center;gap:22px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:-.01em;flex:0 0 auto}
+.brand img{width:28px;height:28px}
+.brand small{display:block;font-size:.66rem;letter-spacing:.04em;color:var(--mute);font-weight:600;line-height:1.2}
+.links{display:flex;gap:24px;margin-left:auto;font-size:.88rem;color:var(--ink2)}
+.links a{padding:6px 0;transition:color .15s}
+.links a:hover{color:var(--ink)}
+.nav .tools{display:flex;align-items:center;gap:10px}
+@media (max-width:860px){.links{display:none}.nav .tools{margin-left:auto}}
+@media (max-width:520px){.nav .tools .btn{display:none}}
+
+/* 국문/영문 스위치 */
+.lang{display:inline-flex;padding:3px;border:0;border-radius:999px;cursor:pointer;font:inherit;font-size:.74rem;font-weight:700;letter-spacing:.04em;
+  background:color-mix(in srgb,var(--ink) 7%,transparent);color:var(--mute);transition:transform .1s ease-out}
+.lang:active{transform:scale(.96)}
+.lang span{padding:5px 10px;border-radius:999px;transition:background-color .2s,color .2s}
+html[data-lang="ko"] .lang .s-ko,html[data-lang="en"] .lang .s-en{background:var(--card);color:var(--ink);box-shadow:0 1px 3px rgba(0,0,0,.12)}
+
+/* 버튼 — 손가락이 닿는 순간 반응 */
+.btn{display:inline-flex;align-items:center;gap:.4em;border:0;border-radius:999px;cursor:pointer;
+  font:inherit;font-size:.98rem;font-weight:600;letter-spacing:-.005em;padding:.78em 1.35em;
+  transition:transform .1s ease-out,background-color .2s}
+.btn:active{transform:scale(.97)}
+.btn.primary{background:var(--accent);color:#fff}
+.btn.primary:hover{background:var(--accent-hover)}
+.btn.ghost{background:color-mix(in srgb,var(--ink) 6%,transparent);color:var(--ink)}
+.btn.ghost:hover{background:color-mix(in srgb,var(--ink) 10%,transparent)}
+.btn.sm{font-size:.84rem;padding:.5em 1em}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+
+/* 카드 — 큰 면은 그림자를 깊게. 눌러도 아무 일 없는 카드는 눌림 반응을 주지 않는다 */
+.card{background:var(--card);border-radius:24px;padding:28px;box-shadow:0 1px 2px rgba(0,0,0,.04),0 8px 28px rgba(0,0,0,.05)}
+
+/* 히어로 */
+.hero{position:relative;padding:calc(var(--nav-h) + clamp(80px,13vw,170px)) 0 clamp(70px,10vw,120px);overflow:hidden;
+  background:radial-gradient(1200px 520px at 85% -10%,rgba(20,87,184,.14),transparent 60%),radial-gradient(800px 420px at 0% 0%,rgba(17,122,67,.08),transparent 60%)}
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:56px;border-radius:24px;overflow:hidden;background:var(--line)}
+.pillars div{background:var(--bg);padding:26px 26px 28px}
+.pillars b{display:block;font-size:1.12rem;letter-spacing:-.01em}
+@media (max-width:820px){.pillars{grid-template-columns:1fr}}
+
+/* 비전 + 한눈에 */
+.glance{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(28px,6vw,80px);align-items:center}
+@media (max-width:860px){.glance{grid-template-columns:1fr}}
+.facts{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.facts .card{padding:22px}
+.facts .k{font-size:.8rem;color:var(--mute);font-weight:600;letter-spacing:.02em}
+.facts .v{font-size:1.05rem;font-weight:650;letter-spacing:-.01em;margin-top:6px}
+
+/* 어두운 절 */
+.dark{background:#0f1f3d;--ink:#f3f6fb;--ink2:#c3cddd;--mute:#8b9ab3;--card:#16294d;--accent-ink:#7fb8ff;color:var(--ink)}
+.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:48px}
+.flow .card{background:color-mix(in srgb,#fff 6%,transparent);box-shadow:inset 0 1px 0 rgba(255,255,255,.08)}
+.flow .tag{font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-ink);font-weight:700}
+.flow b{display:block;font-size:1.35rem;letter-spacing:-.02em;margin:10px 0 8px}
+.flow p{color:var(--ink2);font-size:.95rem}
+@media (max-width:860px){.flow{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.flow{grid-template-columns:1fr}}
+
+/* 연구 영역 — 끌어 넘기는 카드 */
+[data-carousel]{position:relative;overflow:hidden;outline:none;margin-top:40px}
+[data-carousel] .track{display:flex;gap:16px;touch-action:pan-y;user-select:none;-webkit-user-select:none;cursor:grab;will-change:transform}
+[data-carousel].dragging .track{cursor:grabbing}
+[data-carousel] .track>*{flex:0 0 min(360px,82vw)}
+.area{display:flex;flex-direction:column;min-height:300px;padding:30px}
+.area .n{font-size:3.2rem;font-weight:760;letter-spacing:-.04em;line-height:1;color:color-mix(in srgb,var(--accent) 22%,transparent)}
+.area .h3{margin-top:auto;padding-top:40px}
+.area p{color:var(--ink2);font-size:.98rem}
+.car-ui{display:flex;align-items:center;justify-content:space-between;margin-top:22px}
+.dots{display:flex;gap:7px}
+.dots i{display:block;width:7px;height:7px;border-radius:9px;background:color-mix(in srgb,var(--ink) 20%,transparent);transition:width .3s cubic-bezier(.22,1,.36,1),background-color .3s}
+.dots i.on{width:22px;background:var(--ink)}
+.arrows{display:flex;gap:10px}
+.arrows button{width:44px;height:44px;border-radius:50%;border:0;cursor:pointer;font-size:1.15rem;color:var(--ink);
+  background:color-mix(in srgb,var(--ink) 7%,transparent);transition:transform .1s ease-out,opacity .2s}
+.arrows button:active{transform:scale(.92)}
+.arrows button:disabled{opacity:.3;cursor:default}
+
+/* 역량 · 원칙 · 사람들 */
+.caps,.principles{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:44px}
+@media (max-width:860px){.caps{grid-template-columns:1fr 1fr}.principles{grid-template-columns:1fr}}
+@media (max-width:520px){.caps{grid-template-columns:1fr}}
+.caps p,.principles p{color:var(--ink2);font-size:.97rem}
+.principles .num{font-size:.82rem;font-weight:700;letter-spacing:.06em;color:var(--accent-ink);margin-bottom:14px}
+.team{display:grid;grid-template-columns:1.2fr repeat(3,1fr);gap:16px;margin-top:44px}
+@media (max-width:960px){.team{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.team{grid-template-columns:1fr}}
+.team .lead-card{background:linear-gradient(160deg,#16304f,#0f1f3d);color:#f3f6fb}
+.team .lead-card .small{color:#b8c4d8}
+.team .lead-card p{color:#c9d3e3}
+.team p{color:var(--ink2);font-size:.95rem}
+
+/* 연혁 */
+.timeline{margin:48px 0 0;padding:0;list-style:none;position:relative}
+.timeline::before{content:"";position:absolute;left:96px;top:6px;bottom:6px;width:2px;background:linear-gradient(var(--accent),color-mix(in srgb,var(--accent) 15%,transparent))}
+.timeline li{display:grid;grid-template-columns:96px 1fr;gap:30px;padding:0 0 34px;position:relative}
+.timeline li::before{content:"";position:absolute;left:90px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--bg);border:2px solid var(--accent)}
+.timeline time{font-weight:700;letter-spacing:-.01em;color:var(--accent-ink);font-variant-numeric:tabular-nums;padding-top:1px}
+.timeline b{display:block;font-size:1.12rem;letter-spacing:-.01em;margin-bottom:4px}
+.timeline p{color:var(--ink2);font-size:.97rem}
+@media (max-width:560px){.timeline::before{left:6px}.timeline li{grid-template-columns:1fr;gap:4px;padding-left:30px}.timeline li::before{left:0}}
+
+/* 문의 */
+.contact{display:grid;grid-template-columns:1.3fr 1fr;gap:clamp(24px,5vw,70px);align-items:end}
+@media (max-width:860px){.contact{grid-template-columns:1fr}}
+.contact dl{display:grid;grid-template-columns:auto 1fr;gap:14px 22px}
+.contact dt{color:var(--mute);font-size:.88rem}
+.contact dd{margin:0;font-weight:600}
+.contact dd a:hover{text-decoration:underline;text-underline-offset:4px}
+
+/* 푸터 */
+footer{padding:44px 0 70px;border-top:1px solid var(--line)}
+footer .row{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between}
+footer .row>div{display:flex;flex-wrap:wrap;gap:4px 14px;align-items:baseline}
+footer a:hover{color:var(--ink);text-decoration:underline;text-underline-offset:3px}
+
+/* 등장 — 스크립트가 있을 때만 숨겼다가 제자리로 내려앉힌다 */
+.js .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .9s cubic-bezier(.22,1,.36,1)}
+.js .reveal.in{opacity:1;transform:none}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .js .reveal{opacity:1;transform:none;transition:none}
+  .btn,.lang,.arrows button,.dots i,.lang span{transition:none}
 }
-*{box-sizing:border-box;margin:0;padding:0;}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:82px;}
-body{background:var(--bg);color:var(--ink-2);font-family:var(--font);line-height:1.65;font-size:16px;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
-a{color:inherit;text-decoration:none;}
-img,svg{display:block;}
-::selection{background:var(--accent-soft-2);}
-
-.en{display:none;}
-html[data-lang="en"] .kr{display:none;}
-html[data-lang="en"] .en{display:inline;}
-html[data-lang="en"] .en.block{display:block;}
-
-html.js .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1);}
-html.js .reveal.in{opacity:1;transform:none;}
-@media (prefers-reduced-motion:reduce){html.js .reveal{opacity:1;transform:none;transition:none;}}
-
-.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px;}
-.eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:12.5px;font-weight:700;letter-spacing:.06em;color:var(--accent-ink);text-transform:uppercase;}
-.eyebrow::before{content:"";width:20px;height:2px;background:var(--accent);border-radius:2px;display:inline-block;}
-.section-head{max-width:760px;margin-bottom:42px;}
-.section-head.center{margin-left:auto;margin-right:auto;text-align:center;}
-.section-head.center .eyebrow{justify-content:center;}
-.section-head h2{font-size:clamp(25px,3.1vw,35px);font-weight:800;color:var(--ink);letter-spacing:-.022em;line-height:1.22;margin-top:14px;}
-.section-head p{margin-top:14px;font-size:16.5px;color:var(--muted);line-height:1.7;}
-.band{padding:88px 0;}
-.band.alt{background:var(--bg-soft);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
-
-.ph{display:inline-flex;align-items:center;gap:5px;font-size:11.5px;font-weight:700;color:#9a6b1a;background:#fdf6e8;border:1px solid #f1ddb4;padding:3px 9px;border-radius:6px;letter-spacing:.01em;vertical-align:middle;}
-.ph svg{width:11px;height:11px;}
-.tbd{color:var(--muted-2);font-weight:500;font-style:italic;}
-
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 22px;font-size:14.5px;font-weight:600;border-radius:10px;cursor:pointer;border:1px solid transparent;transition:transform .12s,box-shadow .2s,background .2s,border-color .2s,color .2s;white-space:nowrap;}
-.btn svg{width:17px;height:17px;}
-.btn-primary{background:var(--accent);color:#fff;box-shadow:0 1px 2px rgba(20,87,184,.25);}
-.btn-primary:hover{background:var(--accent-ink);box-shadow:0 8px 20px rgba(20,87,184,.26);transform:translateY(-1px);}
-.btn-ghost{background:#fff;color:var(--ink);border-color:var(--border-strong);}
-.btn-ghost:hover{border-color:var(--accent);color:var(--accent-ink);background:var(--accent-soft);}
-.btn.sm{padding:9px 16px;font-size:13.5px;}
-
-/* header */
-header.mainhead{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.86);backdrop-filter:saturate(180%) blur(14px);-webkit-backdrop-filter:saturate(180%) blur(14px);border-bottom:1px solid var(--border);transition:box-shadow .25s;}
-header.mainhead.scrolled{box-shadow:0 4px 20px rgba(15,31,61,.06);}
-.nav{display:flex;align-items:center;gap:20px;height:70px;}
-.brand{display:flex;align-items:center;gap:12px;color:var(--ink);}
-.brand .mark{height:36px;width:auto;flex:0 0 auto;}
-.brand .wm{display:flex;align-items:center;gap:11px;}
-.brand .wm b{font-size:21px;font-weight:800;letter-spacing:.05em;color:#3c7288;}
-.brand .wm .dv{width:1px;height:17px;background:var(--border-strong);}
-.brand .wm .ko{font-size:16.5px;font-weight:500;color:#1a1a1a;letter-spacing:-.01em;}
-.nav-links{display:flex;align-items:center;gap:1px;margin-left:auto;}
-.nav-links a{padding:9px 12px;font-size:14.5px;font-weight:600;color:var(--ink-2);border-radius:8px;transition:background .15s,color .15s;white-space:nowrap;}
-.nav-links a:hover{background:var(--bg-soft-2);color:var(--accent-ink);}
-.nav-actions{display:flex;align-items:center;gap:10px;margin-left:auto;}
-.lang{display:inline-flex;align-items:center;gap:1px;padding:3px;background:var(--bg-soft);border:1px solid var(--border);border-radius:9px;cursor:pointer;transition:border-color .15s;}
-.lang:hover{border-color:var(--border-strong);}
-.lang .seg{padding:4px 9px;font-size:12px;font-weight:700;color:var(--muted-2);border-radius:6px;transition:background .15s,color .15s;letter-spacing:.03em;line-height:1;}
-html[data-lang="ko"] .lang .s-ko{background:var(--accent);color:#fff;}
-html[data-lang="en"] .lang .s-en{background:var(--accent);color:#fff;}
-
-/* hero */
-.hero{position:relative;overflow:hidden;padding:44px 0 70px;background:var(--bg);}
-.hero::before{content:"";position:absolute;inset:0;z-index:0;background:radial-gradient(58% 50% at 80% 6%, rgba(31,111,235,.10), transparent 68%),radial-gradient(46% 42% at 8% 102%, rgba(17,122,67,.06), transparent 70%);}
-.hero::after{content:"";position:absolute;inset:0;z-index:0;opacity:.55;background-image:radial-gradient(rgba(15,31,61,.05) 1px, transparent 1.4px);background-size:24px 24px;-webkit-mask-image:radial-gradient(72% 64% at 50% 26%, #000 0%, transparent 80%);mask-image:radial-gradient(72% 64% at 50% 26%, #000 0%, transparent 80%);}
-.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.12fr .88fr;gap:52px;align-items:center;}
-.hero-tag{display:inline-flex;align-items:center;gap:9px;padding:6px 14px 6px 7px;margin-bottom:22px;background:#fff;border:1px solid var(--border);border-radius:999px;font-size:12.5px;font-weight:600;color:var(--ink-2);box-shadow:var(--shadow);}
-.hero-tag i{display:inline-flex;align-items:center;justify-content:center;height:22px;padding:0 9px;border-radius:999px;background:var(--navy);color:#fff;font-style:normal;font-size:10.5px;font-weight:800;letter-spacing:.06em;}
-.hero h1{font-size:clamp(32px,4.6vw,52px);font-weight:800;color:var(--ink);letter-spacing:-.032em;line-height:1.14;word-break:keep-all;}
-.hero h1 .hl{color:var(--accent);white-space:nowrap;}
-.hero .lede{margin-top:22px;font-size:clamp(16px,1.55vw,18.5px);color:var(--ink-2);line-height:1.72;max-width:560px;}
-.hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px;}
-.hero-meta{display:flex;flex-wrap:wrap;gap:7px 22px;margin-top:30px;}
-.hero-meta div{display:flex;align-items:center;gap:8px;font-size:14.5px;color:var(--muted);font-weight:400;}
-.hero-meta svg{width:16px;height:16px;stroke:var(--leaf);flex:0 0 auto;}
-.overview{background:#fff;border:1px solid var(--border);border-radius:18px;box-shadow:var(--shadow-md);overflow:hidden;}
-.overview .ov-head{background:var(--navy);color:#fff;padding:18px 22px;display:flex;align-items:center;gap:10px;}
-.overview .ov-head .mk{width:9px;height:9px;border-radius:999px;background:#5fd08a;box-shadow:0 0 0 4px rgba(95,208,138,.2);}
-.overview .ov-head b{font-size:14px;font-weight:700;letter-spacing:.01em;}
-.overview .ov-head span{margin-left:auto;font-size:11px;color:#9db0cc;font-weight:600;letter-spacing:.08em;}
-.ov-row{display:flex;align-items:center;gap:14px;padding:15px 22px;border-top:1px solid var(--bg-soft-2);}
-.ov-row .ic{width:38px;height:38px;flex:0 0 auto;border-radius:10px;display:flex;align-items:center;justify-content:center;background:var(--accent-soft);}
-.ov-row .ic svg{width:19px;height:19px;stroke:var(--accent-ink);stroke-width:1.7;}
-.ov-row .k{font-size:12.5px;color:var(--muted);font-weight:600;}
-.ov-row .v{font-size:14.5px;color:var(--ink);font-weight:700;margin-top:1px;}
-
-/* quick links */
-.quick{background:var(--bg-soft);border-bottom:1px solid var(--border);}
-.quick .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:0;}
-.quick a{display:flex;align-items:center;gap:15px;padding:26px 22px;border-left:1px solid var(--border);transition:background .18s;}
-.quick a:first-child{border-left:none;}
-.quick a:hover{background:#fff;}
-.quick a .qi{width:44px;height:44px;flex:0 0 auto;border-radius:11px;background:#fff;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;transition:border-color .18s,background .18s;}
-.quick a:hover .qi{background:var(--accent-soft);border-color:var(--accent-soft-2);}
-.quick a .qi svg{width:21px;height:21px;stroke:var(--accent-ink);stroke-width:1.7;}
-.quick a .qt b{display:block;font-size:15.5px;font-weight:700;color:var(--ink);}
-.quick a .qt small{font-size:13.5px;color:var(--muted);}
-.quick a .arr{margin-left:auto;color:var(--muted-2);transition:transform .18s,color .18s;}
-.quick a:hover .arr{transform:translateX(3px);color:var(--accent);}
-
-/* vision */
-.vision{background:linear-gradient(160deg,#0f1f3d 0%,#16304f 60%,#1a3a63 100%);color:#fff;text-align:center;padding:84px 0;position:relative;overflow:hidden;}
-.vision::before{content:"";position:absolute;inset:0;opacity:.5;background:radial-gradient(40% 60% at 80% 0%, rgba(63,138,255,.3), transparent 70%),radial-gradient(36% 50% at 12% 100%, rgba(95,208,138,.16), transparent 70%);}
-.vision .wrap{position:relative;max-width:1020px;}
-.vision .ey{display:inline-flex;align-items:center;gap:9px;font-size:12.5px;font-weight:700;letter-spacing:.12em;color:#7fa8e8;text-transform:uppercase;}
-.vision .ey::before,.vision .ey::after{content:"";width:24px;height:1.5px;background:rgba(127,168,232,.5);}
-.vision h2{margin-top:20px;font-size:clamp(27px,4vw,44px);font-weight:800;letter-spacing:-.03em;line-height:1.26;}
-.vision h2 .hl{color:#7fb8ff;}
-.vision p{margin-top:22px;font-size:15.5px;color:#c3d2e8;line-height:1.7;margin-left:auto;margin-right:auto;}
-
-/* about */
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:start;}
-.about-lead{font-size:clamp(19px,2.1vw,23px);font-weight:600;color:var(--ink);line-height:1.56;letter-spacing:-.01em;}
-.about-body p{color:var(--ink-2);font-size:15.5px;line-height:1.8;}
-.about-body p+p{margin-top:16px;}
-.about-stats{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:0;}
-.stat{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:20px;border-top:3px solid var(--accent);}
-.stat .n{font-size:21px;font-weight:800;color:var(--ink);letter-spacing:-.02em;line-height:1.12;}
-.stat .n em{font-style:normal;color:var(--accent);font-size:16px;font-weight:700;margin-left:2px;}
-.stat .k{margin-top:8px;font-size:14px;color:var(--muted);font-weight:400;line-height:1.45;}
-
-/* timeline */
-.timeline{position:relative;max-width:760px;margin:0 auto;}
-.timeline::before{content:"";position:absolute;left:8px;top:8px;bottom:14px;width:2px;background:var(--border-strong);}
-.tl{position:relative;padding:0 0 28px 38px;}
-.tl:last-child{padding-bottom:0;}
-.tl::before{content:"";position:absolute;left:2px;top:2px;width:15px;height:15px;border-radius:50%;background:#fff;border:3px solid var(--accent);box-shadow:0 0 0 4px var(--accent-soft);}
-.tl .yr{display:inline-block;font-size:13px;font-weight:800;color:#fff;background:var(--navy);padding:3px 12px;border-radius:999px;letter-spacing:.03em;}
-.tl h4{margin-top:11px;font-size:17px;font-weight:700;color:var(--ink);letter-spacing:-.01em;}
-.tl p{margin-top:5px;font-size:14.5px;color:var(--muted);line-height:1.6;}
-
-/* org */
-.org{max-width:920px;margin:0 auto;}
-.org-top{background:var(--navy);color:#fff;border-radius:16px;padding:24px 28px;text-align:center;}
-.org-top .role{font-size:12px;color:#9db0cc;font-weight:700;letter-spacing:.06em;text-transform:uppercase;}
-.org-top .who{font-size:20px;font-weight:800;margin-top:6px;letter-spacing:-.01em;}
-.org-top .who small{display:inline-block;font-size:13.5px;font-weight:500;color:#c3d2e8;margin-left:6px;letter-spacing:0;}
-.org-conn{width:2px;height:26px;background:var(--border-strong);margin:0 auto;}
-.org-parts{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
-.org-part{background:#fff;border:1px solid var(--border);border-radius:14px;padding:24px 20px;text-align:center;box-shadow:var(--shadow);}
-.org-part .ic{width:44px;height:44px;margin:0 auto 14px;border-radius:11px;background:var(--accent-soft);display:flex;align-items:center;justify-content:center;}
-.org-part .ic svg{width:22px;height:22px;stroke:var(--accent-ink);stroke-width:1.7;}
-.org-part h4{font-size:16px;font-weight:700;color:var(--ink);}
-.org-part p{margin-top:7px;font-size:14.5px;color:var(--muted);line-height:1.55;}
-.org-note{margin-top:22px;text-align:center;font-size:15px;color:var(--muted);}
-
-/* cards / caps / approach */
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
-.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:28px 26px;box-shadow:var(--shadow);transition:transform .18s,box-shadow .25s,border-color .25s;position:relative;}
-.card:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:var(--border-strong);}
-.card .ic{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:var(--accent-soft);margin-bottom:18px;}
-.card .ic svg{width:24px;height:24px;stroke:var(--accent-ink);stroke-width:1.7;}
-.card .no{position:absolute;top:26px;right:26px;font-size:13px;font-weight:800;color:var(--bg-soft-2);letter-spacing:.05em;}
-.card h3{font-size:18px;font-weight:700;color:var(--ink);letter-spacing:-.01em;line-height:1.35;}
-.card p{margin-top:10px;font-size:15.5px;color:var(--muted);line-height:1.62;}
-.cap-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;}
-.cap{background:#fff;padding:30px 28px;transition:background .2s;}
-.cap:hover{background:var(--accent-soft);}
-.cap .ic{display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:10px;background:var(--bg-soft-2);margin-bottom:16px;transition:background .2s;}
-.cap:hover .ic{background:#fff;}
-.cap .ic svg{width:22px;height:22px;stroke:var(--accent-ink);stroke-width:1.7;}
-.cap h3{font-size:16.5px;font-weight:700;color:var(--ink);}
-.cap p{margin-top:8px;font-size:15px;color:var(--muted);line-height:1.6;}
-.approach-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
-.appr{position:relative;padding:32px 28px;background:#fff;border:1px solid var(--border);border-radius:var(--radius);}
-.appr .num{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:10px;background:var(--navy);color:#fff;font-size:14px;font-weight:800;letter-spacing:.03em;}
-.appr h3{margin-top:16px;font-size:19.5px;font-weight:700;color:var(--ink);letter-spacing:-.01em;}
-.appr p{margin-top:10px;font-size:15.5px;color:var(--muted);line-height:1.66;}
-.domains{display:flex;flex-wrap:wrap;gap:9px;margin-top:34px;}
-.domains .d{display:inline-flex;align-items:center;gap:8px;padding:10px 17px;background:#fff;border:1px solid var(--border);border-radius:999px;font-size:13.5px;font-weight:600;color:var(--ink-2);white-space:nowrap;}
-.domains .d i{width:8px;height:8px;border-radius:999px;background:var(--accent);flex:0 0 auto;}
-.domains .d:nth-child(2) i{background:#1f6feb;}
-.domains .d:nth-child(3) i{background:var(--leaf);}
-
-/* contact */
-.contact-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:30px;align-items:stretch;}
-.contact-card{background:linear-gradient(150deg,#0f1f3d 0%,#16304f 55%,#1d3f6e 100%);border-radius:20px;padding:clamp(28px,3vw,38px);color:#fff;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:center;}
-.contact-card::before{content:"";position:absolute;inset:0;opacity:.5;background:radial-gradient(50% 60% at 88% 8%, rgba(63,138,255,.34), transparent 70%);}
-.contact-card .inner{position:relative;}
-.contact-card h3{font-size:clamp(22px,2.6vw,29px);font-weight:800;letter-spacing:-.02em;line-height:1.28;}
-.contact-card p{margin-top:16px;color:#c3d2e8;font-size:15.5px;line-height:1.72;max-width:440px;}
-.contact-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px;}
-.contact-actions .btn-primary{background:#fff;color:var(--navy);box-shadow:none;}
-.contact-actions .btn-primary:hover{background:#eaf1ff;box-shadow:0 8px 24px rgba(0,0,0,.25);}
-.contact-info{background:#fff;border:1px solid var(--border);border-radius:20px;padding:clamp(28px,3.5vw,38px);box-shadow:var(--shadow);}
-.contact-info h3{font-size:18px;font-weight:800;color:var(--ink);letter-spacing:-.01em;}
-.info-row{display:flex;gap:14px;padding:17px 0;border-bottom:1px solid var(--bg-soft-2);}
-.info-row:last-child{border-bottom:none;padding-bottom:0;}
-.info-row .ic{width:38px;height:38px;flex:0 0 auto;border-radius:10px;background:var(--bg-soft);display:flex;align-items:center;justify-content:center;}
-.info-row .ic svg{width:19px;height:19px;stroke:var(--accent-ink);stroke-width:1.8;}
-.info-row .k{font-size:14px;font-weight:500;color:var(--muted-2);text-transform:uppercase;letter-spacing:.04em;}
-.info-row .v{font-size:17px;color:var(--ink);font-weight:500;margin-top:3px;}
-.info-row .v.lg{font-size:clamp(22px,2.4vw,27px);font-weight:700;line-height:1.2;margin-top:6px;letter-spacing:-.01em;}
-.info-row .v.lg a{color:var(--accent);}
-.info-row .v a{color:var(--accent-ink);}
-.info-row .v a:hover{text-decoration:underline;}
-
-/* location */
-.location{margin-top:30px;}
-.loc-head{font-size:18px;font-weight:800;color:var(--ink);margin-bottom:16px;display:flex;align-items:center;gap:10px;}
-.loc-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:20px;align-items:stretch;}
-.loc-info{background:#fff;border:1px solid var(--border);border-radius:16px;padding:26px;box-shadow:var(--shadow);}
-.map-embed{border:1px solid var(--border);border-radius:16px;overflow:hidden;min-height:260px;background:var(--bg-soft-2);}
-.map-embed iframe{width:100%;height:100%;min-height:260px;border:0;display:block;}
-
-/* footer */
-footer{background:var(--navy);color:#aebcd4;padding:56px 0 30px;}
-.foot-top{display:grid;grid-template-columns:2.4fr 1fr 1.2fr;gap:40px;padding-bottom:36px;border-bottom:1px solid rgba(255,255,255,.1);}
-.foot-brand .brand{color:#fff;margin-bottom:16px;}
-.foot-brand .brand .wm b{color:#fff;}
-.foot-brand .brand .wm .dv{background:rgba(255,255,255,.2);}
-.foot-brand .brand .wm .ko{color:#c5d2e6;}
-.foot-brand p{font-size:14px;color:#9db0cc;line-height:1.74;max-width:460px;}
-.foot-col h4{font-size:12px;font-weight:700;color:#7c8eaa;text-transform:uppercase;letter-spacing:.06em;margin-bottom:15px;}
-.foot-col a,.foot-col .fi{display:flex;align-items:flex-start;gap:7px;font-size:13.5px;color:#c5d2e6;margin-bottom:11px;transition:color .15s;line-height:1.45;}
-.foot-col a:hover{color:#fff;}
-.foot-col a .ext{width:11px;height:11px;opacity:.6;margin-top:3px;flex:0 0 auto;}
-.foot-col .fi{color:#9db0cc;}
-.foot-col .fi svg{width:14px;height:14px;margin-top:3px;flex:0 0 auto;stroke:#7c8eaa;}
-.foot-bottom{margin-top:24px;display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:center;font-size:12.5px;color:#7c8eaa;}
-.foot-bottom .grp{display:flex;gap:8px;align-items:center;flex-wrap:wrap;}
-.foot-bottom .grp b{color:#c5d2e6;font-weight:600;}
-
-@media (max-width:980px){
-  .hero-grid{grid-template-columns:1fr;gap:42px;}
-  .hero-visual{max-width:480px;}
-  .quick .wrap{grid-template-columns:repeat(2,1fr);}
-  .quick a:nth-child(3){border-left:none;}
-  .quick a:nth-child(n+3){border-top:1px solid var(--border);}
-  .about-grid{grid-template-columns:1fr;gap:30px;}
-  .cards{grid-template-columns:repeat(2,1fr);}
-  .cap-grid{grid-template-columns:repeat(2,1fr);}
-  .org-parts{grid-template-columns:1fr;}
-  .approach-grid{grid-template-columns:1fr;}
-  .contact-grid{grid-template-columns:1fr;}
-  .loc-grid{grid-template-columns:1fr;}
-  .foot-top{grid-template-columns:1fr 1fr;gap:30px;}
-  .nav-links{display:none;}
+@media (prefers-reduced-transparency:reduce){
+  .nav{background:var(--bg);-webkit-backdrop-filter:none;backdrop-filter:none}
 }
-@media (max-width:600px){
-  .wrap{padding:0 18px;}
-  .hero{padding:44px 0 50px;}
-  .hero .lede{margin-top:28px;}
-  .hero-cta{margin-top:42px;}
-  .band{padding:60px 0;}
-  .vision{padding:64px 0;}
-  .quick .wrap{grid-template-columns:repeat(4,1fr);}
-  .quick a{flex-direction:column;align-items:center;text-align:center;gap:8px;padding:15px 5px;border-left:1px solid var(--border);border-top:none;}
-  .quick a:first-child{border-left:none;}
-  .quick a:nth-child(3){border-left:1px solid var(--border);}
-  .quick a:nth-child(n+3){border-top:none;}
-  .quick a .qi{width:36px;height:36px;border-radius:9px;}
-  .quick a .qi svg{width:18px;height:18px;}
-  .quick a .qt b{font-size:11.5px;line-height:1.25;}
-  .quick a .qt small,.quick a .arr{display:none;}
-  .cards,.cap-grid{grid-template-columns:1fr;}
-  .hero-meta{display:none;}
-  .hero-visual{display:none;}
-  .about-stats{grid-template-columns:repeat(2,1fr);gap:10px;}
-  .about-stats .stat{padding:15px 13px;border-top-width:2px;}
-  .about-stats .stat .n{font-size:16px;letter-spacing:-.02em;}
-  .about-stats .stat .k{font-size:11.5px;line-height:1.4;margin-top:5px;}
-  .hero-cta .btn{flex:1 1 auto;}
-  .nav{gap:10px;}
-  .foot-brand .brand .wm .dv,.foot-brand .brand .wm .ko{display:none;}
-  .mainhead .brand{gap:10px;}
-  .mainhead .brand .wm{gap:9px;}
-  .mainhead .brand .wm b{font-size:19px;}
-  .mainhead .brand .wm .ko{font-size:15px;font-weight:500;white-space:nowrap;}
-  html[data-lang="en"] .mainhead .brand .wm .ko,html[data-lang="en"] .mainhead .brand .wm .dv{display:none;}
-  .foot-top{grid-template-columns:1fr;}
+@media (prefers-contrast:more){
+  .nav{background:var(--bg);border-bottom:1px solid var(--ink)}
+  .card{box-shadow:none;border:1px solid var(--ink)}
+  .small,.sub{color:var(--ink2)}
 }
 </style>
 </head>
 <body>
+<a class="skip" href="#main"><span class="kr">본문 바로가기</span><span class="en">Skip to content</span></a>
 
-<!-- HEADER -->
-<header class="mainhead" id="top">
-  <div class="wrap nav">
-    <a href="#top" class="brand" aria-label="OKRI home">
-      <img class="mark" src="/okri-mark.png" alt="OKRI" width="98" height="97" />
-      <span class="wm"><b>OKRI</b><span class="dv"></span><span class="ko"><span class="kr">옥천당 한의약연구소</span><span class="en">OKCHUNDANG KM Research Institute</span></span></span>
-    </a>
-    <div class="nav-actions">
-      <button class="lang" id="langToggle" aria-label="언어 전환 KR/EN" role="switch">
-        <span class="seg s-ko">KR</span><span class="seg s-en">EN</span>
-      </button>
-    </div>
+<header class="nav" id="nav"><div class="wrap">
+  <a class="brand" href="#top" aria-label="OKRI home"><img src="/okri-mark.png" alt="" width="28" height="28" /><span translate="no">OKRI<small><span class="kr">옥천당 한의약연구소</span><span class="en">Okchundang KM Research Institute</span></small></span></a>
+  <nav class="links" aria-label="Main">
+    <a href="#about"><span class="kr">연구소</span><span class="en">About</span></a>
+    <a href="#research"><span class="kr">연구 영역</span><span class="en">Research</span></a>
+    <a href="#caps"><span class="kr">역량</span><span class="en">Capabilities</span></a>
+    <a href="#history"><span class="kr">연혁</span><span class="en">History</span></a>
+    <a href="#people"><span class="kr">사람들</span><span class="en">People</span></a>
+  </nav>
+  <div class="tools">
+    <button class="lang" id="langToggle" type="button" aria-label="언어 전환 KR/EN · Switch language"><span class="s-ko">KR</span><span class="s-en">EN</span></button>
+    <a class="btn primary sm" href="#contact"><span class="kr">협력·문의</span><span class="en">Contact</span></a>
   </div>
-</header>
+</div></header>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="wrap hero-grid">
-    <div class="hero-copy">
-      <span class="hero-tag"><i>OKRI</i><span class="kr">전통과 혁신이 만나는 한의학 연구소</span><span class="en">Where tradition meets innovation</span></span>
-      <h1><span class="kr">한의학을 일상에 더 가깝게, <span class="hl">그리고 세계로</span></span><span class="en">Korean medicine, closer to life — <span class="hl">and to the world</span></span></h1>
-      <p class="lede"><span class="kr">OKRI는 한의학을 일상에 더 가깝게, 그리고 세계로 확장하기 위한 연구소입니다. 임상 현장의 가치 있는 경험을 발굴해 표준화하고, 새로운 기술과 융합하여 누구나 쉽게 경험할 수 있는 상품으로 만듭니다.</span><span class="en">OKRI is a research institute dedicated to bringing Korean medicine closer to everyday life and to the world — discovering the valuable experience of clinical practice, standardizing it, and fusing it with new technology into products anyone can experience.</span></p>
-      <div class="hero-cta">
-        <a href="#research" class="btn btn-primary"><span class="kr">연구 영역 보기</span><span class="en">Explore research</span></a>
-        <a href="#contact" class="btn btn-ghost"><span class="kr">공동연구 제안</span><span class="en">Propose a collaboration</span></a>
-      </div>
-      <div class="hero-meta">
-        <div><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span class="kr">한의학의 과학화 · 디지털화</span><span class="en">Scientific &amp; digital KM</span></div>
-        <div><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span class="kr">임상 경험의 발굴 · 표준화</span><span class="en">Discover &amp; standardize clinical experience</span></div>
-        <div><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span class="kr">한의학의 일상화 · 세계화</span><span class="en">Everyday &amp; global Korean medicine</span></div>
-      </div>
-    </div>
-    <div class="hero-visual reveal">
-      <div class="overview">
-        <div class="ov-head"><span class="mk"></span><b><span class="kr">연구소 한눈에 보기</span><span class="en">At a glance</span></b><span>OKRI</span></div>
-        <div class="ov-row"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5ZM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div><div><div class="k"><span class="kr">성격</span><span class="en">Identity</span></div><div class="v"><span class="kr">한의학 지식 플랫폼 · 싱크탱크</span><span class="en">Knowledge platform &amp; think tank</span></div></div></div>
-        <div class="ov-row"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16M4 12h16M4 19h10"/></svg></div><div><div class="k"><span class="kr">연구 영역</span><span class="en">Research</span></div><div class="v"><span class="kr">6개 핵심 분야</span><span class="en">6 core fields</span></div></div></div>
-        <div class="ov-row"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="m22 7-8.5 8.5-5-5L2 17"/><path d="M16 7h6v6"/></svg></div><div><div class="k"><span class="kr">핵심 활동</span><span class="en">Core work</span></div><div class="v"><span class="kr">과학화 · 표준화 · 사업화</span><span class="en">Science · standards · market</span></div></div></div>
-        <div class="ov-row"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg></div><div><div class="k"><span class="kr">지향</span><span class="en">Aim</span></div><div class="v"><span class="kr">한의학의 일상화 · 세계화</span><span class="en">Everyday &amp; global KM</span></div></div></div>
-        <div class="ov-row"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M16 7a4 4 0 1 0-8 0M4 21v-1a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v1"/></svg></div><div><div class="k"><span class="kr">연구 총괄</span><span class="en">Director</span></div><div class="v"><span class="kr">구태훈 원장 (한의사·한의학 박사)</span><span class="en">Dr. Taehoon Koo (KMD, PhD)</span></div></div></div>
-      </div>
-    </div>
+<main id="main">
+<section class="hero" id="top"><div class="wrap">
+  <p class="eyebrow reveal" translate="no">Okchundang KM Research Institute</p>
+  <h1 class="display reveal" data-d="60"><span class="kr">전통과 혁신이 만나는<br>한의학 연구소</span><span class="en">Where tradition<br>meets innovation</span></h1>
+  <p class="lead reveal" data-d="120"><span class="kr">OKRI는 한의학을 일상에 더 가깝게, 그리고 세계로 확장하기 위한 연구소입니다. 임상 현장의 가치 있는 경험을 발굴해 표준화하고, 새로운 기술과 융합하여 누구나 쉽게 경험할 수 있는 상품으로 만듭니다.</span><span class="en">OKRI is a research institute dedicated to bringing Korean medicine closer to everyday life and to the world — discovering the valuable experience of clinical practice, standardizing it, and fusing it with new technology into products anyone can experience.</span></p>
+  <div class="cta reveal" data-d="180"><a class="btn primary" href="#research"><span class="kr">연구 영역 보기</span><span class="en">Explore research</span></a><a class="btn ghost" href="#contact"><span class="kr">공동연구 제안</span><span class="en">Propose a collaboration</span></a></div>
+  <div class="pillars reveal" data-d="240">
+    <div><b><span class="kr">한의학의 과학화 · 디지털화</span><span class="en">Scientific &amp; digital KM</span></b><span class="sub kr">Scientific &amp; digital KM</span></div>
+    <div><b><span class="kr">임상 경험의 발굴 · 표준화</span><span class="en">Discover &amp; standardize clinical experience</span></b><span class="sub kr">Discover &amp; standardize clinical experience</span></div>
+    <div><b><span class="kr">한의학의 일상화 · 세계화</span><span class="en">Everyday &amp; global Korean medicine</span></b><span class="sub kr">Everyday &amp; global Korean medicine</span></div>
   </div>
-</section>
+</div></section>
 
-<!-- QUICK LINKS -->
-<nav class="quick" aria-label="quick links">
-  <div class="wrap">
-    <a href="#about"><span class="qi"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-5M12 8h.01"/></svg></span><span class="qt"><b><span class="kr">연구소 소개</span><span class="en">About OKRI</span></b><small><span class="kr">미션 · 연혁 · 조직</span><span class="en">Mission &amp; org</span></small></span><span class="arr"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
-    <a href="#research"><span class="qi"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6M10 3v6.5L5.2 17a2 2 0 0 0 1.7 3h10.2a2 2 0 0 0 1.7-3L14 9.5V3"/><path d="M7.5 14h9"/></svg></span><span class="qt"><b><span class="kr">연구 영역</span><span class="en">Research</span></b><small><span class="kr">6개 핵심 연구 분야</span><span class="en">6 core fields</span></small></span><span class="arr"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
-    <a href="#capabilities"><span class="qi"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 3 7l9 4 9-4-9-4Z"/><path d="M3 12l9 4 9-4M3 17l9 4 9-4"/></svg></span><span class="qt"><b><span class="kr">역량·인프라</span><span class="en">Capabilities</span></b><small><span class="kr">분석 · 임상 · 데이터</span><span class="en">Labs &amp; data</span></small></span><span class="arr"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
-    <a href="#contact"><span class="qi"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v12H5.2L4 18.5V4Z"/><path d="M8 9h8M8 12h5"/></svg></span><span class="qt"><b><span class="kr">협력·문의</span><span class="en">Contact</span></b><small><span class="kr">공동연구 · 협력 문의</span><span class="en">Collaborate with us</span></small></span><span class="arr"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+<section id="about" style="padding-top:20px"><div class="wrap glance">
+  <div>
+    <p class="eyebrow reveal">Vision</p>
+    <h2 class="h2 reveal"><span class="kr">전통과 혁신이 만나,<br>한의학의 미래를 엽니다</span><span class="en">Where tradition meets innovation, opening the future of Korean medicine</span></h2>
+    <p class="lead reveal"><span class="kr">OKRI는 단순한 연구를 넘어, 전통과 혁신이 만나는 지점에서 새로운 가치를 창출하는 지식 플랫폼이자 싱크탱크입니다.</span><span class="en">Beyond research, OKRI is a knowledge platform and think tank that creates new value where tradition meets innovation.</span></p>
   </div>
-</nav>
-
-<!-- VISION -->
-<section class="vision">
-  <div class="wrap reveal">
-    <span class="ey">Vision</span>
-    <h2><span class="kr">전통과 혁신이 만나, <span class="hl">한의학의 미래</span>를 엽니다</span><span class="en">Where tradition meets innovation, opening <span class="hl">the future of Korean medicine</span></span></h2>
-    <p><span class="kr">OKRI는 단순한 연구를 넘어, 전통과 혁신이 만나는 지점에서 새로운 가치를 창출하는 지식 플랫폼이자 싱크탱크입니다.</span><span class="en">Beyond research, OKRI is a knowledge platform and think tank that creates new value where tradition meets innovation.</span></p>
+  <div class="facts">
+    <div class="card reveal"><div class="k"><span class="kr">성격</span><span class="en">Identity</span></div><div class="v"><span class="kr">한의학 지식 플랫폼 · 싱크탱크</span><span class="en">Knowledge platform &amp; think tank</span></div></div>
+    <div class="card reveal" data-d="60"><div class="k"><span class="kr">연구 영역</span><span class="en">Research</span></div><div class="v"><span class="kr">6개 핵심 분야</span><span class="en">6 core fields</span></div></div>
+    <div class="card reveal" data-d="120"><div class="k"><span class="kr">핵심 활동</span><span class="en">Core work</span></div><div class="v"><span class="kr">과학화 · 표준화 · 사업화</span><span class="en">Science · standards · market</span></div></div>
+    <div class="card reveal" data-d="180"><div class="k"><span class="kr">지향</span><span class="en">Aim</span></div><div class="v"><span class="kr">한의학의 일상화 · 세계화</span><span class="en">Everyday &amp; global KM</span></div></div>
   </div>
-</section>
+</div></section>
 
-<!-- ABOUT -->
-<section class="band" id="about">
-  <div class="wrap about-grid">
-    <div class="reveal">
-      <span class="eyebrow"><span class="kr">연구소 소개</span><span class="en">About OKRI</span></span>
-      <p class="about-lead" style="margin-top:18px;"><span class="kr">오랜 전통 속에 머물러 있던 한의학을 현대적 시각으로 재해석하고, 새로운 기술과 융합하여 모두가 쉽게 경험할 수 있는 상품으로 만들어 한의학의 일상화, 지평 확장을 추구합니다.</span><span class="en">We reinterpret a long tradition through a modern lens and fuse it with new technology into products everyone can easily experience — pursuing the everyday use and broader horizons of Korean medicine.</span></p>
-    </div>
-    <div class="about-body reveal">
-      <div class="about-stats">
-        <div class="stat"><div class="n"><span class="kr">데이터</span><span class="en">Capture</span></div><div class="k"><span class="kr">전통적 임상 경험을 데이터로 축적</span><span class="en">Accumulating traditional clinical experience as data</span></div></div>
-        <div class="stat"><div class="n"><span class="kr">과학화</span><span class="en">Validate</span></div><div class="k"><span class="kr">축적된 경험을 과학의 언어로 검증</span><span class="en">Verifying experience in the language of science</span></div></div>
-        <div class="stat"><div class="n"><span class="kr">표준화</span><span class="en">Standardize</span></div><div class="k"><span class="kr">누구나 재현 가능한 품질로 표준화</span><span class="en">Quality anyone can reproduce</span></div></div>
-        <div class="stat"><div class="n"><span class="kr">일상화</span><span class="en">Broaden</span></div><div class="k"><span class="kr">한의학의 일상화, 글로벌 지평 확장</span><span class="en">Bringing Korean medicine into everyday life and the world</span></div></div>
-      </div>
-    </div>
+<section class="dark"><div class="wrap">
+  <p class="eyebrow reveal">About OKRI</p>
+  <h2 class="h2 reveal"><span class="kr">경험에서 표준까지</span><span class="en">From experience to standard</span></h2>
+  <p class="lead reveal"><span class="kr">오랜 전통 속에 머물러 있던 한의학을 현대적 시각으로 재해석하고, 새로운 기술과 융합하여 모두가 쉽게 경험할 수 있는 상품으로 만들어 한의학의 일상화, 지평 확장을 추구합니다.</span><span class="en">We reinterpret a long tradition through a modern lens and fuse it with new technology into products everyone can easily experience — pursuing the everyday use and broader horizons of Korean medicine.</span></p>
+  <div class="flow">
+    <div class="card reveal"><div class="tag">01 · Capture</div><b><span class="kr">데이터</span><span class="en">Capture</span></b><p><span class="kr">전통적 임상 경험을 데이터로 축적</span><span class="en">Accumulating traditional clinical experience as data</span></p></div>
+    <div class="card reveal" data-d="80"><div class="tag">02 · Validate</div><b><span class="kr">과학화</span><span class="en">Validate</span></b><p><span class="kr">축적된 경험을 과학의 언어로 검증</span><span class="en">Verifying experience in the language of science</span></p></div>
+    <div class="card reveal" data-d="160"><div class="tag">03 · Standardize</div><b><span class="kr">표준화</span><span class="en">Standardize</span></b><p><span class="kr">누구나 재현 가능한 품질로 표준화</span><span class="en">Quality anyone can reproduce</span></p></div>
+    <div class="card reveal" data-d="240"><div class="tag">04 · Broaden</div><b><span class="kr">일상화</span><span class="en">Broaden</span></b><p><span class="kr">한의학의 일상화, 글로벌 지평 확장</span><span class="en">Bringing Korean medicine into everyday life and the world</span></p></div>
   </div>
-</section>
+</div></section>
 
-<!-- HISTORY -->
-<section class="band alt" id="history">
-  <div class="wrap">
-    <div class="section-head center reveal">
-      <span class="eyebrow"><span class="kr">연혁</span><span class="en">History</span></span>
-      <h2><span class="kr">OKRI의 발자취</span><span class="en">Our milestones</span></h2>
+<section id="research"><div class="wrap">
+  <p class="eyebrow reveal">Research areas</p>
+  <h2 class="h2 reveal"><span class="kr">여섯 갈래의 연구</span><span class="en">Six lines of research</span></h2>
+  <p class="lead reveal"><span class="kr">약속처방·한약 표준화부터 진료 모델·의료기기·디지털, 한의학 세계화까지.</span><span class="en">From prescriptions and herbal standardization to care models, devices, digital health, and global Korean medicine.</span> <span class="small"><span class="kr">카드를 끌어 넘겨 보세요.</span><span class="en">Drag the cards to browse.</span></span></p>
+  <div data-carousel tabindex="0" aria-roledescription="carousel" aria-label="Research areas">
+    <div class="track">
+      <article class="card area"><div class="n">01</div><h3 class="h3"><span class="kr">약속처방 개발 · 한약 표준화</span><span class="en">Prescriptions &amp; standardization</span></h3><p><span class="kr">약속처방을 발굴·개발하고, 한약재와 한약의 품질을 과학적으로 표준화·근거화합니다.</span><span class="en">Discovering and developing shared prescriptions, and standardizing herbs and medicines on a scientific basis.</span></p></article>
+      <article class="card area"><div class="n">02</div><h3 class="h3"><span class="kr">진료 모델 발굴 · 사업화</span><span class="en">Care models &amp; commercialization</span></h3><p><span class="kr">임상 현장의 진료 모델을 발굴·개발하고 제품·서비스로 사업화합니다.</span><span class="en">Discovering clinical care models and bringing them to market as products and services.</span></p></article>
+      <article class="card area"><div class="n">03</div><h3 class="h3"><span class="kr">한의 임상 연구</span><span class="en">Clinical research</span></h3><p><span class="kr">임상 근거를 수집·평가하고 전임상·임상 연구를 기획·해석해 한의학의 근거를 축적합니다.</span><span class="en">Gathering and appraising clinical evidence, and designing pre-clinical and clinical studies.</span></p></article>
+      <article class="card area"><div class="n">04</div><h3 class="h3"><span class="kr">의료기기 활용 확산</span><span class="en">Medical-device adoption</span></h3><p><span class="kr">한의원에서 의료기기를 널리, 바르게 활용하도록 발굴·표준화·확산을 연구합니다.</span><span class="en">Researching how medical devices can be widely and properly used in Korean-medicine clinics.</span></p></article>
+      <article class="card area"><div class="n">05</div><h3 class="h3"><span class="kr">디지털 헬스케어 · AI(AX)</span><span class="en">Digital health &amp; AI</span></h3><p><span class="kr">AI를 활용한 디지털 헬스케어와 한의학의 AI 전환(AX)을 연구·구현합니다.</span><span class="en">Researching AI-driven digital healthcare and the AI transformation (AX) of Korean medicine.</span></p></article>
+      <article class="card area"><div class="n">06</div><h3 class="h3"><span class="kr">한의학의 세계화</span><span class="en">Globalizing Korean medicine</span></h3><p><span class="kr">한의학을 일상에 더 가깝게, 그리고 세계로 확장하기 위한 연구와 협력을 추진합니다.</span><span class="en">Advancing research and partnerships to bring Korean medicine closer to life and to the world.</span></p></article>
     </div>
-    <div class="timeline reveal">
-      <div class="tl"><span class="yr">2023.07</span><h4><span class="kr">비마황 다이어트 모델 로컬 임상 연구</span><span class="en">Ephedra-free diet model — local clinical study</span></h4><p><span class="kr">체중 관리를 위한 비마황 한약 처방 모델을 한의원 현장에서 임상 연구.</span><span class="en">Clinical study of an ephedra-free herbal weight-management model in clinical practice.</span></p></div>
-      <div class="tl"><span class="yr">2025.03</span><h4><span class="kr">한열 변증을 포함한 감비환 진료모델 임상 연구</span><span class="en">Gambihwan care model with cold–heat differentiation</span></h4><p><span class="kr">한열(寒熱) 변증을 적용한 감비환 진료모델의 임상 연구.</span><span class="en">Clinical study of a Gambihwan care model applying cold–heat pattern differentiation.</span></p></div>
-      <div class="tl"><span class="yr">2026.01</span><h4><span class="kr">방향성 성분 보존 감기약 공정 연구</span><span class="en">Cold-remedy process preserving aromatic compounds</span></h4><p><span class="kr">농축 공정에서 소실되는 방향성 성분을 보존하는 감기약 제조 공정 연구.</span><span class="en">Process research to retain the aromatic compounds otherwise lost during concentration in a cold remedy.</span></p></div>
-      <div class="tl"><span class="yr">2026.05</span><h4><span class="kr">지방간 개선 프로그램 ‘청간담’ 개발</span><span class="en">‘Cheonggandam’ fatty-liver care program</span></h4><p><span class="kr">유동층 단미제제를 활용한 지방간 개선 프로그램 ‘청간담’ 개발 (한의기능영양학회 공동).</span><span class="en">Developed ‘Cheonggandam’, a fatty-liver program using fluidized-bed single-herb preparations (with the Korean Functional Medicine and Nutrition Association, KFMNA).</span></p></div>
-    </div>
+    <div class="car-ui"><div class="dots"></div><div class="arrows"><button class="prev" type="button" aria-label="Previous">‹</button><button class="next" type="button" aria-label="Next">›</button></div></div>
   </div>
-</section>
+</div></section>
 
-<!-- TEAM / ORG -->
-<section class="band" id="team">
-  <div class="wrap">
-    <div class="section-head center reveal">
-      <span class="eyebrow"><span class="kr">조직 · 연구진</span><span class="en">Team &amp; organization</span></span>
-      <h2><span class="kr">사람들</span><span class="en">People</span></h2>
-    </div>
-    <div class="org reveal">
-      <div class="org-top">
-        <div class="role"><span class="kr">연구 총괄</span><span class="en">Research Director</span></div>
-        <div class="who"><span class="kr">구태훈 원장</span><span class="en">Dr. Taehoon Koo</span><small><span class="kr">한의사 · 한의학 박사 · 옥천당한의원 대표원장</span><span class="en">KMD · PhD · Director, Okchundang KM Clinic</span></small></div>
-      </div>
-      <div class="org-conn"></div>
-      <div class="org-parts">
-        <div class="org-part"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6M10 3v6.5L5.2 17a2 2 0 0 0 1.7 3h10.2a2 2 0 0 0 1.7-3L14 9.5V3"/><path d="M7.5 14h9"/></svg></div><h4><span class="kr">처방·표준화 연구</span><span class="en">Prescriptions &amp; standardization</span></h4><p><span class="kr">약속처방 개발, 한약 표준화·근거화</span><span class="en">Prescriptions &amp; herbal standardization</span></p></div>
-        <div class="org-part"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v6a6 6 0 0 0 12 0V3"/><path d="M4 21h16"/><path d="M9 21a3 3 0 0 1 6 0"/><path d="M6 3h12"/></svg></div><h4><span class="kr">임상·진료모델 연구</span><span class="en">Clinical &amp; care models</span></h4><p><span class="kr">한의 임상 연구, 진료 모델 발굴·사업화</span><span class="en">Clinical research &amp; care models</span></p></div>
-        <div class="org-part"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10"/><path d="M12 2a10 10 0 0 1 10 10H12V2Z"/><circle cx="12" cy="12" r="3"/></svg></div><h4><span class="kr">디지털·세계화</span><span class="en">Digital &amp; global</span></h4><p><span class="kr">AI·디지털 헬스케어, 한의학 세계화</span><span class="en">Digital health &amp; globalization</span></p></div>
-      </div>
-      <p class="org-note"><span class="kr">연구진은 한의사·한의학 박사를 중심으로 다양한 분야 전문가로 구성됩니다.</span><span class="en">Our team centers on Korean-medicine doctors and PhDs, with experts across disciplines.</span></p>
-    </div>
+<section id="caps" style="padding-top:0"><div class="wrap">
+  <p class="eyebrow reveal">Capabilities &amp; infrastructure</p>
+  <h2 class="h2 reveal"><span class="kr">근거를 만드는 인프라</span><span class="en">The infrastructure behind the evidence</span></h2>
+  <p class="lead reveal"><span class="kr">분석 화학부터 임상 연구, 품질 표준화, 데이터와 AI까지 — 연구를 뒷받침하는 실물 역량.</span><span class="en">From analytical chemistry to clinical research, quality standardization, data, and AI.</span></p>
+  <div class="caps">
+    <div class="card reveal"><h3 class="h3"><span class="kr">이화학 분석</span><span class="en">Analytical chemistry</span></h3><p><span class="kr">자체 HPLC 운영, HPLC-MS·GC-MS 협력 분석으로 지표성분을 정량·표준화.</span><span class="en">In-house HPLC plus partnered HPLC-MS / GC-MS for marker-compound quantification.</span></p></div>
+    <div class="card reveal" data-d="60"><h3 class="h3"><span class="kr">전임상 시험</span><span class="en">Pre-clinical testing</span></h3><p><span class="kr">in vitro·in vivo 시험을 자체 수행하고, 전문 기관과 협업 연구를 진행.</span><span class="en">In vitro and in vivo studies in-house and with specialized partners.</span></p></div>
+    <div class="card reveal" data-d="120"><h3 class="h3"><span class="kr">임상 연구</span><span class="en">Clinical research</span></h3><p><span class="kr">임상시험 공동연구를 기획·해석해 한의학의 임상 근거를 축적.</span><span class="en">Designing and interpreting collaborative clinical studies to build evidence.</span></p></div>
+    <div class="card reveal"><h3 class="h3"><span class="kr">품질·표준화</span><span class="en">Quality &amp; standardization</span></h3><p><span class="kr">한약재 이력추적, 공정통제, 원료 표준화 — 제약 수준 품질관리.</span><span class="en">Traceability, process control, and raw-material standardization at pharma-grade quality.</span></p></div>
+    <div class="card reveal" data-d="60"><h3 class="h3"><span class="kr">데이터 · 근거</span><span class="en">Data &amp; evidence</span></h3><p><span class="kr">공동탕전·임상 데이터를 근거 분석과 처방·연구 평가에 활용.</span><span class="en">Dispensary and clinical data powering evidence analysis and research appraisal.</span></p></div>
+    <div class="card reveal" data-d="120"><h3 class="h3"><span class="kr">디지털 · AI 분석</span><span class="en">Digital &amp; AI</span></h3><p><span class="kr">AI·디지털 도구로 데이터를 분석하고 한의학의 디지털 전환을 지원.</span><span class="en">Using AI and digital tools to analyze data and drive Korean medicine's digital transformation.</span></p></div>
   </div>
-</section>
+</div></section>
 
-<!-- RESEARCH -->
-<section class="band alt" id="research">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="eyebrow"><span class="kr">연구 영역</span><span class="en">Research areas</span></span>
-      <h2><span class="kr">여섯 갈래의 연구</span><span class="en">Six lines of research</span></h2>
-      <p><span class="kr">약속처방·한약 표준화부터 진료 모델·의료기기·디지털, 한의학 세계화까지.</span><span class="en">From prescriptions and herbal standardization to care models, devices, digital health, and global Korean medicine.</span></p>
-    </div>
-    <div class="cards">
-      <div class="card reveal"><div class="no">01</div><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6M10 3v6.5L5.2 17a2 2 0 0 0 1.7 3h10.2a2 2 0 0 0 1.7-3L14 9.5V3"/><path d="M7.5 14h9"/></svg></div><h3><span class="kr">약속처방 개발 · 한약 표준화</span><span class="en">Prescriptions &amp; standardization</span></h3><p><span class="kr">약속처방을 발굴·개발하고, 한약재와 한약의 품질을 과학적으로 표준화·근거화합니다.</span><span class="en">Discovering and developing shared prescriptions, and standardizing herbs and medicines on a scientific basis.</span></p></div>
-      <div class="card reveal"><div class="no">02</div><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M6 21V10l6-4 6 4v11"/><path d="M10 21v-5h4v5"/></svg></div><h3><span class="kr">진료 모델 발굴 · 사업화</span><span class="en">Care models &amp; commercialization</span></h3><p><span class="kr">임상 현장의 진료 모델을 발굴·개발하고 제품·서비스로 사업화합니다.</span><span class="en">Discovering clinical care models and bringing them to market as products and services.</span></p></div>
-      <div class="card reveal"><div class="no">03</div><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v6a6 6 0 0 0 12 0V3"/><path d="M4 21h16"/><path d="M9 21a3 3 0 0 1 6 0"/><path d="M6 3h12"/></svg></div><h3><span class="kr">한의 임상 연구</span><span class="en">Clinical research</span></h3><p><span class="kr">임상 근거를 수집·평가하고 전임상·임상 연구를 기획·해석해 한의학의 근거를 축적합니다.</span><span class="en">Gathering and appraising clinical evidence, and designing pre-clinical and clinical studies.</span></p></div>
-      <div class="card reveal"><div class="no">04</div><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h4l2-5 2 10 2-5h4"/><rect x="3" y="4" width="18" height="16" rx="2"/></svg></div><h3><span class="kr">의료기기 활용 확산</span><span class="en">Medical-device adoption</span></h3><p><span class="kr">한의원에서 의료기기를 널리, 바르게 활용하도록 발굴·표준화·확산을 연구합니다.</span><span class="en">Researching how medical devices can be widely and properly used in Korean-medicine clinics.</span></p></div>
-      <div class="card reveal"><div class="no">05</div><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M9 8h6M9 11h4"/></svg></div><h3><span class="kr">디지털 헬스케어 · AI(AX)</span><span class="en">Digital health &amp; AI</span></h3><p><span class="kr">AI를 활용한 디지털 헬스케어와 한의학의 AI 전환(AX)을 연구·구현합니다.</span><span class="en">Researching AI-driven digital healthcare and the AI transformation (AX) of Korean medicine.</span></p></div>
-      <div class="card reveal"><div class="no">06</div><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg></div><h3><span class="kr">한의학의 세계화</span><span class="en">Globalizing Korean medicine</span></h3><p><span class="kr">한의학을 일상에 더 가깝게, 그리고 세계로 확장하기 위한 연구와 협력을 추진합니다.</span><span class="en">Advancing research and partnerships to bring Korean medicine closer to life and to the world.</span></p></div>
-    </div>
+<section id="history" style="padding-top:0"><div class="wrap">
+  <p class="eyebrow reveal">History</p>
+  <h2 class="h2 reveal"><span class="kr">OKRI의 발자취</span><span class="en">Our milestones</span></h2>
+  <ol class="timeline">
+    <li class="reveal"><time>2023.07</time><div><b><span class="kr">비마황 다이어트 모델 로컬 임상 연구</span><span class="en">Ephedra-free diet model — local clinical study</span></b><p><span class="kr">체중 관리를 위한 비마황 한약 처방 모델을 한의원 현장에서 임상 연구.</span><span class="en">Clinical study of an ephedra-free herbal weight-management model in clinical practice.</span></p></div></li>
+    <li class="reveal"><time>2025.03</time><div><b><span class="kr">한열 변증을 포함한 감비환 진료모델 임상 연구</span><span class="en">Gambihwan care model with cold–heat differentiation</span></b><p><span class="kr">한열(寒熱) 변증을 적용한 감비환 진료모델의 임상 연구.</span><span class="en">Clinical study of a Gambihwan care model applying cold–heat pattern differentiation.</span></p></div></li>
+    <li class="reveal"><time>2026.01</time><div><b><span class="kr">방향성 성분 보존 감기약 공정 연구</span><span class="en">Cold-remedy process preserving aromatic compounds</span></b><p><span class="kr">농축 공정에서 소실되는 방향성 성분을 보존하는 감기약 제조 공정 연구.</span><span class="en">Process research to retain the aromatic compounds otherwise lost during concentration in a cold remedy.</span></p></div></li>
+    <li class="reveal"><time>2026.05</time><div><b><span class="kr">지방간 개선 프로그램 ‘청간담’ 개발</span><span class="en">‘Cheonggandam’ fatty-liver care program</span></b><p><span class="kr">유동층 단미조제과립을 활용한 지방간 개선 프로그램 ‘청간담’ 개발 (한의기능영양학회 공동).</span><span class="en">Developed ‘Cheonggandam’, a fatty-liver program using fluidized-bed single-herb granules for compounding (with the Korean Functional Medicine and Nutrition Association, KFMNA).</span></p></div></li>
+  </ol>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+  <p class="eyebrow reveal">Our approach</p>
+  <h2 class="h2 reveal"><span class="kr">연구를 대하는 세 가지 원칙</span><span class="en">Three principles in how we research</span></h2>
+  <div class="principles">
+    <div class="card reveal"><p class="num">01</p><h3 class="h3"><span class="kr">경험에서 발굴</span><span class="en">Rooted in experience</span></h3><p><span class="kr">새로운 신약이나 이론을 만드는 것이 아니라, 진료 현장에서 우수한 한의사들이 쌓아 온 임상 경험을 발굴하고 모으는 데서 시작합니다.</span><span class="en">We don't invent new drugs or theories — we begin by discovering and gathering the clinical experience that excellent doctors have built in practice.</span></p></div>
+    <div class="card reveal" data-d="80"><p class="num">02</p><h3 class="h3"><span class="kr">근거 우선</span><span class="en">Evidence first</span></h3><p><span class="kr">모은 경험을 과학의 언어로 검증합니다. 임상·문헌 근거로 평가하고, 검증되지 않은 효능은 주장하지 않습니다.</span><span class="en">We verify that experience in the language of science — appraising it against clinical and literature evidence, and never claiming what we haven't proven.</span></p></div>
+    <div class="card reveal" data-d="160"><p class="num">03</p><h3 class="h3"><span class="kr">표준화</span><span class="en">Standardization</span></h3><p><span class="kr">검증된 경험을 누구나 재현할 수 있는 표준으로 만듭니다. 재현 가능한 품질이 한의학을 일상으로, 세계로 넓히는 길입니다.</span><span class="en">We turn proven experience into standards anyone can reproduce — reproducible quality is what carries Korean medicine into everyday life and the world.</span></p></div>
   </div>
-</section>
+</div></section>
 
-<!-- CAPABILITIES -->
-<section class="band" id="capabilities">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="eyebrow"><span class="kr">역량 · 인프라</span><span class="en">Capabilities &amp; infrastructure</span></span>
-      <h2><span class="kr">근거를 만드는 인프라</span><span class="en">The infrastructure behind the evidence</span></h2>
-      <p><span class="kr">분석 화학부터 임상 연구, 품질 표준화, 데이터와 AI까지 — 연구를 뒷받침하는 실물 역량.</span><span class="en">From analytical chemistry to clinical research, quality standardization, data, and AI.</span></p>
-    </div>
-    <div class="cap-grid reveal">
-      <div class="cap"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3v6L2 18a2 2 0 0 0 1.8 3h6.4A2 2 0 0 0 12 18L9 9V3"/><path d="M3.5 13h7"/><path d="M14 4h7M17.5 4v7M14 15h7M17.5 15v6"/></svg></div><h3><span class="kr">이화학 분석</span><span class="en">Analytical chemistry</span></h3><p><span class="kr">자체 HPLC 운영, HPLC-MS·GC-MS 협력 분석으로 지표성분을 정량·표준화.</span><span class="en">In-house HPLC plus partnered HPLC-MS / GC-MS for marker-compound quantification.</span></p></div>
-      <div class="cap"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg></div><h3><span class="kr">전임상 시험</span><span class="en">Pre-clinical testing</span></h3><p><span class="kr">in vitro·in vivo 시험을 자체 수행하고, 전문 기관과 협업 연구를 진행.</span><span class="en">In vitro and in vivo studies in-house and with specialized partners.</span></p></div>
-      <div class="cap"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M16 7a4 4 0 1 0-8 0"/><path d="M4 21v-1a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v1"/><path d="m18 8 2 2 3-3"/></svg></div><h3><span class="kr">임상 연구</span><span class="en">Clinical research</span></h3><p><span class="kr">임상시험 공동연구를 기획·해석해 한의학의 임상 근거를 축적.</span><span class="en">Designing and interpreting collaborative clinical studies to build evidence.</span></p></div>
-      <div class="cap"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 3 7l9 4 9-4-9-4Z"/><path d="M3 12l9 4 9-4M3 17l9 4 9-4"/></svg></div><h3><span class="kr">품질·표준화</span><span class="en">Quality &amp; standardization</span></h3><p><span class="kr">한약재 이력추적, 공정통제, 원료 표준화 — 제약 수준 품질관리.</span><span class="en">Traceability, process control, and raw-material standardization at pharma-grade quality.</span></p></div>
-      <div class="cap"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.7 4 3 9 3s9-1.3 9-3V5"/><path d="M3 12c0 1.7 4 3 9 3s9-1.3 9-3"/></svg></div><h3><span class="kr">데이터 · 근거</span><span class="en">Data &amp; evidence</span></h3><p><span class="kr">공동탕전·임상 데이터를 근거 분석과 처방·연구 평가에 활용.</span><span class="en">Dispensary and clinical data powering evidence analysis and research appraisal.</span></p></div>
-      <div class="cap"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M9 9h.01M15 9h.01M9 14c1 1 5 1 6 0"/><path d="M12 2v2M2 12h2M20 12h2"/></svg></div><h3><span class="kr">디지털 · AI 분석</span><span class="en">Digital &amp; AI</span></h3><p><span class="kr">AI·디지털 도구로 데이터를 분석하고 한의학의 디지털 전환을 지원.</span><span class="en">Using AI and digital tools to analyze data and drive Korean medicine's digital transformation.</span></p></div>
-    </div>
+<section id="people" style="padding-top:0"><div class="wrap">
+  <p class="eyebrow reveal">Team &amp; organization</p>
+  <h2 class="h2 reveal"><span class="kr">사람들</span><span class="en">People</span></h2>
+  <div class="team">
+    <div class="card lead-card reveal"><p class="small"><span class="kr">연구 총괄</span><span class="en">Research Director</span></p><h3 class="h3" style="font-size:1.5rem;margin-top:10px"><span class="kr">구태훈 원장</span><span class="en">Dr. Taehoon Koo</span></h3><p><span class="kr">한의사 · 한의학 박사 · 옥천당한의원 대표원장</span><span class="en">KMD · PhD · Director, Okchundang KM Clinic</span></p></div>
+    <div class="card reveal" data-d="60"><h3 class="h3"><span class="kr">처방·표준화 연구</span><span class="en">Prescriptions &amp; standardization</span></h3><p><span class="kr">약속처방 개발, 한약 표준화·근거화</span><span class="en">Prescriptions &amp; herbal standardization</span></p></div>
+    <div class="card reveal" data-d="120"><h3 class="h3"><span class="kr">임상·진료모델 연구</span><span class="en">Clinical &amp; care models</span></h3><p><span class="kr">한의 임상 연구, 진료 모델 발굴·사업화</span><span class="en">Clinical research &amp; care models</span></p></div>
+    <div class="card reveal" data-d="180"><h3 class="h3"><span class="kr">디지털·세계화</span><span class="en">Digital &amp; global</span></h3><p><span class="kr">AI·디지털 헬스케어, 한의학 세계화</span><span class="en">Digital health &amp; globalization</span></p></div>
   </div>
-</section>
+  <p class="small reveal" style="margin-top:18px"><span class="kr">연구진은 한의사·한의학 박사를 중심으로 다양한 분야 전문가로 구성됩니다.</span><span class="en">Our team centers on Korean-medicine doctors and PhDs, with experts across disciplines.</span></p>
+</div></section>
 
-<!-- APPROACH -->
-<section class="band alt" id="approach">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="eyebrow"><span class="kr">접근 방식</span><span class="en">Our approach</span></span>
-      <h2><span class="kr">연구를 대하는 세 가지 원칙</span><span class="en">Three principles in how we research</span></h2>
-    </div>
-    <div class="approach-grid">
-      <div class="appr reveal"><div class="num">01</div><h3><span class="kr">경험에서 발굴</span><span class="en">Rooted in experience</span></h3><p><span class="kr">새로운 신약이나 이론을 만드는 것이 아니라, 진료 현장에서 우수한 한의사들이 쌓아 온 임상 경험을 발굴하고 모으는 데서 시작합니다.</span><span class="en">We don't invent new drugs or theories — we begin by discovering and gathering the clinical experience that excellent doctors have built in practice.</span></p></div>
-      <div class="appr reveal"><div class="num">02</div><h3><span class="kr">근거 우선</span><span class="en">Evidence first</span></h3><p><span class="kr">모은 경험을 과학의 언어로 검증합니다. 임상·문헌 근거로 평가하고, 검증되지 않은 효능은 주장하지 않습니다.</span><span class="en">We verify that experience in the language of science — appraising it against clinical and literature evidence, and never claiming what we haven't proven.</span></p></div>
-      <div class="appr reveal"><div class="num">03</div><h3><span class="kr">표준화</span><span class="en">Standardization</span></h3><p><span class="kr">검증된 경험을 누구나 재현할 수 있는 표준으로 만듭니다. 재현 가능한 품질이 한의학을 일상으로, 세계로 넓히는 길입니다.</span><span class="en">We turn proven experience into standards anyone can reproduce — reproducible quality is what carries Korean medicine into everyday life and the world.</span></p></div>
-    </div>
+<section id="contact" class="dark"><div class="wrap contact">
+  <div>
+    <p class="eyebrow reveal">Get in touch</p>
+    <h2 class="h2 reveal"><span class="kr">함께 한의학의<br>지평을 넓혀 갑니다</span><span class="en">Let's broaden the horizon of Korean medicine — together</span></h2>
+    <p class="lead reveal"><span class="kr">공동연구·임상 협력, 약속처방·진료모델 제안을 환영합니다. 옥천당 한의약연구소가 답하겠습니다.</span><span class="en">We welcome joint research, clinical collaboration, and prescription or care-model proposals.</span></p>
+    <div class="cta reveal"><a class="btn primary" href="mailto:contact@okri.kr"><span class="kr">메일로 문의하기</span><span class="en">Email us</span></a></div>
   </div>
-</section>
+  <dl class="reveal" data-d="120"><dt><span class="kr">이메일</span><span class="en">Email</span></dt><dd><a href="mailto:contact@okri.kr">contact@okri.kr</a></dd><dt><span class="kr">주소</span><span class="en">Address</span></dt><dd><span class="kr">대구광역시 동구 율암로 142</span><span class="en">142 Yuram-ro, Dong-gu, Daegu, Korea</span></dd></dl>
+</div></section>
+</main>
 
-<!-- CONTACT -->
-<section class="band" id="contact">
-  <div class="wrap">
-    <div class="section-head reveal" style="margin-bottom:34px;">
-      <span class="eyebrow"><span class="kr">협력 · 문의</span><span class="en">Get in touch</span></span>
-      <h2><span class="kr">함께 한의학의 지평을 넓혀 갑니다</span><span class="en">Let's broaden the horizon of Korean medicine — together</span></h2>
-    </div>
-    <div class="contact-grid">
-      <div class="contact-card reveal">
-        <div class="inner">
-          <h3><span class="kr">공동연구·협력을 환영합니다</span><span class="en">Open to research &amp; collaboration</span></h3>
-          <p><span class="kr">공동연구·임상 협력, 약속처방·진료모델 제안을 환영합니다. 옥천당 한의약연구소가 답하겠습니다.</span><span class="en">We welcome joint research, clinical collaboration, and prescription or care-model proposals.</span></p>
-        </div>
-      </div>
-      <div class="contact-info reveal">
-        <div class="info-row"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg></div><div><div class="k"><span class="kr">이메일</span><span class="en">Email</span></div><div class="v lg"><a href="mailto:contact@okri.kr">contact@okri.kr</a></div></div></div>
-        <div class="info-row"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></div><div><div class="k"><span class="kr">주소</span><span class="en">Address</span></div><div class="v"><span class="kr">대구광역시 동구 율암로 142</span><span class="en">142 Yuram-ro, Dong-gu, Daegu, Korea</span></div></div></div>
-      </div>
-    </div>
-
-    <div class="location reveal" style="display:none">
-      <div class="loc-head"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="var(--accent-ink)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg><span class="kr">오시는 길</span><span class="en">Location</span></div>
-      <div class="loc-grid">
-        <div class="loc-info">
-          <div class="info-row" style="padding-top:0;"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></div><div><div class="k"><span class="kr">주소</span><span class="en">Address</span></div><div class="v"><span class="kr">대구광역시 동구 율암로 142</span><span class="en">142 Yuram-ro, Dong-gu, Daegu</span></div></div></div>
-          <div class="info-row" style="padding-bottom:0;border-bottom:none;"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6v6a4 4 0 0 0 8 0V6M5 18h14M9 21h6M7 6h10"/></svg></div><div><div class="k"><span class="kr">교통·주차</span><span class="en">Getting here</span></div><div class="v"><span class="tbd"><span class="kr">안내 등록 예정</span><span class="en">To be added</span></span></div></div></div>
-        </div>
-        <div class="map-embed"></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <div class="wrap">
-    <div class="foot-top">
-      <div class="foot-brand">
-        <a href="#top" class="brand">
-          <img class="mark" src="/okri-mark-white.png" alt="OKRI" width="98" height="97" />
-          <span class="wm"><b>OKRI</b><span class="dv"></span><span class="ko"><span class="kr">옥천당 한의약연구소</span><span class="en">OKCHUNDANG KM Research Institute</span></span></span>
-        </a>
-        <p><span class="kr">전통과 혁신이 만나는 한의학 지식 플랫폼이자 싱크탱크.<br>한의학을 일상에 더 가깝게, 그리고 세계로 확장합니다.</span><span class="en">A knowledge platform and think tank where tradition meets innovation — bringing Korean medicine closer to life, and to the world.</span></p>
-      </div>
-      <div class="foot-col">
-        <h4><span class="kr">관련 사이트</span><span class="en">Related sites</span></h4>
-        <a href="https://okchundang.co.kr" target="_blank" rel="noopener"><span class="kr">㈜옥천당</span><span class="en">Okchundang Co.</span><svg class="ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3h7v7M21 3l-9 9M21 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5"/></svg></a>
-        <a href="https://okchundang.com" target="_blank" rel="noopener"><span class="kr">옥천당 공동탕전실</span><span class="en">Okchundang Dispensary</span><svg class="ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3h7v7M21 3l-9 9M21 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5"/></svg></a>
-      </div>
-      <div class="foot-col">
-        <h4><span class="kr">연락처</span><span class="en">Contact</span></h4>
-        <a href="mailto:contact@okri.kr"><svg class="ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>contact@okri.kr</a>
-        <div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg><span><span class="kr">대구광역시 동구 율암로 142</span><span class="en">142 Yuram-ro, Dong-gu, Daegu</span></span></div>
-      </div>
-    </div>
-    <div class="foot-bottom">
-      <div class="grp"><b>OKRI</b><span class="kr">옥천당 한의약연구소 · Okchundang Korean Medicine Research Institute</span><span class="en">Okchundang Korean Medicine Research Institute</span></div>
-      <div>© <span id="year">2026</span> OKRI. All rights reserved.</div>
-    </div>
-  </div>
-</footer>
+<footer><div class="wrap small row">
+  <div><b style="color:var(--ink)" translate="no">OKRI</b><span class="kr">옥천당 한의약연구소 · 한의학을 일상에 더 가깝게, 그리고 세계로.</span><span class="en">Okchundang Korean Medicine Research Institute — bringing Korean medicine closer to life, and to the world.</span></div>
+  <div><span class="kr">관련 사이트</span><span class="en">Related sites</span><a href="https://okchundang.co.kr" target="_blank" rel="noopener"><span class="kr">㈜옥천당</span><span class="en">Okchundang Co.</span> ↗</a><a href="https://okchundang.com" target="_blank" rel="noopener"><span class="kr">옥천당 공동탕전실</span><span class="en">Okchundang Dispensary</span> ↗</a></div>
+  <div><span>© <span id="year">2026</span> OKRI. All rights reserved.</span></div>
+</div></footer>
 
 <script>
-(function(){
+/* 공통 동작 — apple-design 원칙:
+   누르는 순간 반응 · 화면 위 현재값에서 출발하는 스프링(중단·되돌리기 가능)
+   끌기 1:1 추종 + 놓을 때 속도 이어받기 + 관성 투영(d=0.998) + 경계 고무줄
+   동작 줄이기면 스프링·이동 대신 즉시 배치 */
+(function () {
   var root = document.documentElement;
-  root.classList.add('js');
-  var KEY = 'okri-lang';
-  var btn = document.getElementById('langToggle');
-  var label = btn ? btn.querySelector('.lang-label') : null;
-  function apply(lang){
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)');
+
+  /* 국문 / 영문 */
+  var KEY = 'okri-lang', btn = document.getElementById('langToggle');
+  function apply(lang) {
     root.setAttribute('data-lang', lang);
     root.setAttribute('lang', lang === 'en' ? 'en' : 'ko');
-    if(label) label.textContent = lang === 'en' ? 'KR' : 'EN';
+    btn.setAttribute('aria-pressed', lang === 'en' ? 'true' : 'false');
     document.title = lang === 'en' ? 'OKRI | Okchundang Korean Medicine Research Institute' : '옥천당 한의약연구소 | OKRI';
-    try{ localStorage.setItem(KEY, lang); }catch(e){}
+    try { localStorage.setItem(KEY, lang); } catch (e) {}
   }
-  if(btn){ btn.addEventListener('click', function(){ apply(root.getAttribute('data-lang') === 'en' ? 'ko' : 'en'); }); }
-  var saved; try{ saved = localStorage.getItem(KEY); }catch(e){}
-  apply(saved === 'en' ? 'en' : 'ko');
-  var y = document.getElementById('year'); if(y){ y.textContent = new Date().getFullYear(); }
-  var header = document.getElementById('top');
-  function onScroll(){ if(window.scrollY > 8){ header.classList.add('scrolled'); } else { header.classList.remove('scrolled'); } }
-  onScroll(); window.addEventListener('scroll', onScroll, { passive:true });
+  btn.addEventListener('click', function () { apply(root.getAttribute('data-lang') === 'en' ? 'ko' : 'en'); });
+  apply(root.getAttribute('data-lang') === 'en' ? 'en' : 'ko');
+  var y = document.getElementById('year'); if (y) y.textContent = new Date().getFullYear();
+
+  /* 스프링(감쇠비·응답시간) — Apple 의 damping/response 를 그대로 쓴다 */
+  function spring(from, to, o) {
+    var damping = o.damping == null ? 1 : o.damping, response = o.response || 0.4;
+    if (reduce.matches) { o.onUpdate(to); o.onDone && o.onDone(); return { stop: function () {} }; }
+    var k = Math.pow(2 * Math.PI / response, 2), c = 4 * Math.PI * damping / response;
+    var x = from, v = o.velocity || 0, last = performance.now(), raf = 0, alive = true;
+    function step(now) {
+      if (!alive) return;
+      var dt = Math.min((now - last) / 1000, 1 / 30); last = now;
+      for (var i = 0; i < 4; i++) { var h = dt / 4, a = -k * (x - to) - c * v; v += a * h; x += v * h; }
+      o.onUpdate(x);
+      if (Math.abs(v) < 0.5 && Math.abs(x - to) < 0.5) { o.onUpdate(to); alive = false; o.onDone && o.onDone(); return; }
+      raf = requestAnimationFrame(step);
+    }
+    raf = requestAnimationFrame(step);
+    return { stop: function () { alive = false; cancelAnimationFrame(raf); } };
+  }
+  function project(v) { var d = 0.998; return (v / 1000) * d / (1 - d); }
+  function rubber(over, dim) { var c = 0.55; return (over * dim * c) / (dim + c * Math.abs(over)); }
+
+  /* 상단 바: 스크롤되면 가장자리 그림자 */
+  var nav = document.getElementById('nav');
+  function onScroll() { nav.classList.toggle('scrolled', scrollY > 8); }
+  addEventListener('scroll', onScroll, { passive: true }); onScroll();
+
+  /* 등장: 화면에 들어올 때 한 번 */
   var els = document.querySelectorAll('.reveal');
-  if('IntersectionObserver' in window){
-    var io = new IntersectionObserver(function(entries){ entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } }); }, { rootMargin:'0px 0px -8% 0px', threshold:0.08 });
-    els.forEach(function(el){ io.observe(el); });
-  } else { els.forEach(function(el){ el.classList.add('in'); }); }
+  if (reduce.matches || !('IntersectionObserver' in window)) els.forEach(function (el) { el.classList.add('in'); });
+  else {
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { rootMargin: '0px 0px -8% 0px' });
+    els.forEach(function (el) { el.style.transitionDelay = (el.dataset.d || 0) + 'ms'; io.observe(el); });
+  }
+
+  /* 연구 영역 카드: 손가락에 붙어 움직이고, 놓으면 관성대로 다음 카드에 안착 */
+  document.querySelectorAll('[data-carousel]').forEach(function (car) {
+    var track = car.querySelector('.track'), cards = [].slice.call(track.children);
+    var dots = car.querySelector('.dots'), prev = car.querySelector('.prev'), next = car.querySelector('.next');
+    var x = 0, anim = null, index = 0, drag = null;
+    function gap() { var s = getComputedStyle(track); return parseFloat(s.columnGap || s.gap) || 0; }
+    function stepW() { return cards[0].getBoundingClientRect().width + gap(); }
+    function minX() { return Math.min(0, car.clientWidth - track.scrollWidth); }
+    function snaps() { return cards.map(function (_, i) { return Math.max(minX(), -i * stepW()); }); }
+    function set(v) { x = v; track.style.transform = 'translate3d(' + v + 'px,0,0)'; }
+    function mark() {
+      var s = snaps(); index = s.reduce(function (b, p, i) { return Math.abs(p - x) < Math.abs(s[b] - x) ? i : b; }, 0);
+      if (dots) [].forEach.call(dots.children, function (d, i) { d.classList.toggle('on', i === index); });
+      prev.disabled = x >= -1; next.disabled = x <= minX() + 1;
+    }
+    function go(target, velocity, damping) {
+      anim && anim.stop();
+      anim = spring(x, target, { damping: damping || 1, response: 0.42, velocity: velocity || 0, onUpdate: set, onDone: mark });
+      mark();
+    }
+    if (dots) dots.innerHTML = cards.map(function () { return '<i aria-hidden="true"></i>'; }).join('');
+    prev.addEventListener('click', function () { go(snaps()[Math.max(0, index - 1)]); });
+    next.addEventListener('click', function () { go(snaps()[Math.min(cards.length - 1, index + 1)]); });
+    car.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowRight') { e.preventDefault(); next.click(); }
+      if (e.key === 'ArrowLeft') { e.preventDefault(); prev.click(); }
+    });
+    track.addEventListener('pointerdown', function (e) {
+      if (e.button !== 0) return;
+      anim && anim.stop();                       // 움직이는 중에도 바로 잡힌다(현재 위치에서 출발)
+      drag = { id: e.pointerId, sx: e.clientX, sy: e.clientY, ox: x, hist: [[e.clientX, e.timeStamp]], dir: null, moved: false };
+    });
+    track.addEventListener('pointermove', function (e) {
+      if (!drag || e.pointerId !== drag.id) return;
+      var dx = e.clientX - drag.sx, dy = e.clientY - drag.sy;
+      if (!drag.dir) {                           // 10px 이내는 방향 판정 보류
+        if (Math.hypot(dx, dy) < 10) return;
+        drag.dir = Math.abs(dx) > Math.abs(dy) ? 'x' : 'y';
+        if (drag.dir === 'x') { track.setPointerCapture(e.pointerId); car.classList.add('dragging'); }
+      }
+      if (drag.dir !== 'x') return;
+      drag.moved = true;
+      var nx = drag.ox + dx;
+      if (nx > 0) nx = rubber(nx, car.clientWidth);
+      if (nx < minX()) nx = minX() - rubber(minX() - nx, car.clientWidth);
+      set(nx);
+      drag.hist.push([e.clientX, e.timeStamp]); if (drag.hist.length > 6) drag.hist.shift();
+    });
+    function end(e) {
+      if (!drag || e.pointerId !== drag.id) return;
+      car.classList.remove('dragging');
+      if (drag.dir === 'x') {
+        var h = drag.hist, a = h[0], b = h[h.length - 1];
+        var v = b[1] > a[1] ? (b[0] - a[0]) / ((b[1] - a[1]) / 1000) : 0;
+        var s = snaps(), aim = x + project(v);
+        var target = s.reduce(function (best, p) { return Math.abs(p - aim) < Math.abs(best - aim) ? p : best; }, s[0]);
+        go(target, v, Math.abs(v) > 300 ? 0.8 : 1);   // 튕긴 경우만 살짝 출렁임
+        if (drag.moved) track.addEventListener('click', function (ev) { ev.preventDefault(); ev.stopPropagation(); }, { capture: true, once: true });
+      }
+      drag = null;
+    }
+    track.addEventListener('pointerup', end); track.addEventListener('pointercancel', end);
+    addEventListener('resize', function () { go(snaps()[index]); });
+    mark();
+  });
 })();
 </script>
 </body>
