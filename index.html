@@ -71,11 +71,21 @@ section{padding:clamp(72px,11vw,140px) 0}
 .brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:-.01em;flex:0 0 auto}
 .brand img{width:28px;height:28px}
 .brand small{display:block;font-size:.66rem;letter-spacing:.04em;color:var(--mute);font-weight:600;line-height:1.2}
+/* 넓은 화면 — 「OKRI | 옥천당 한의약연구소」 한 줄, 기관명을 읽히는 크기로 */
+@media (min-width:1001px){
+  .brand img{width:30px;height:30px}
+  .brand .bt{display:flex;align-items:center;font-size:1.08rem}
+  .brand small{display:flex;align-items:center;font-size:.98rem;font-weight:600;letter-spacing:-.01em;color:var(--ink2);line-height:1}
+  .brand small::before{content:"";width:1px;height:14px;margin:0 11px;background:color-mix(in srgb,var(--ink) 22%,transparent)}
+}
 .links{display:flex;gap:24px;margin-left:auto;font-size:.88rem;color:var(--ink2)}
 .links a{padding:6px 0;transition:color .15s}
 .links a:hover{color:var(--ink)}
 .nav .tools{display:flex;align-items:center;gap:10px}
-@media (max-width:860px){.links{display:none}.nav .tools{margin-left:auto}}
+.links a{white-space:nowrap}
+@media (max-width:1000px){.links{display:none}.nav .tools{margin-left:auto}}
+/* 영문은 기관명·메뉴가 길다 — 한 줄에 다 들어가는 폭에서만 메뉴를 편다 */
+@media (max-width:1140px){html[data-lang="en"] .links{display:none}html[data-lang="en"] .nav .tools{margin-left:auto}}
 @media (max-width:520px){.nav .tools .btn{display:none}}
 
 /* 국문/영문 스위치 */
@@ -206,7 +216,7 @@ footer a:hover{color:var(--ink);text-decoration:underline;text-underline-offset:
 <a class="skip" href="#main"><span class="kr">본문 바로가기</span><span class="en">Skip to content</span></a>
 
 <header class="nav" id="nav"><div class="wrap">
-  <a class="brand" href="#top" aria-label="OKRI home"><img src="/okri-mark.png" alt="" width="28" height="28" /><span translate="no">OKRI<small><span class="kr">옥천당 한의약연구소</span><span class="en">Okchundang KM Research Institute</span></small></span></a>
+  <a class="brand" href="#top" aria-label="OKRI home"><img src="/okri-mark.png" alt="" width="28" height="28" /><span class="bt" translate="no">OKRI<small><span class="kr">옥천당 한의약연구소</span><span class="en">Okchundang KM Research Institute</span></small></span></a>
   <nav class="links" aria-label="Main">
     <a href="#about"><span class="kr">연구소</span><span class="en">About</span></a>
     <a href="#research"><span class="kr">연구 영역</span><span class="en">Research</span></a>
